@@ -1,4 +1,9 @@
-module.exports = {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
   // exponent username for publishing
   expUsername: process.env.EXP_USERNAME,
 
@@ -25,5 +30,8 @@ module.exports = {
   githubSourceBranch: process.env.GITHUB_SOURCE_BRANCH,
 
   // pull request number, e.g. 123
-  githubPullRequestId: process.env.GITHUB_PR_NUMBER
+  githubPullRequestId: process.env.GITHUB_PR_NUMBER,
+
+  // if argument --commit-id is present then this value is  used for generating the exponent publish name
+  githubCommitId: process.env.GITHUB_ID_COMMIT
 };

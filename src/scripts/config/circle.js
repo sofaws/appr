@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   expUsername: process.env.EXP_USERNAME,
   expPassword: process.env.EXP_PASSWORD,
   githubUsername: process.env.GITHUB_USERNAME,
@@ -6,5 +6,6 @@ module.exports = {
   githubOrg: process.env.CIRCLE_PROJECT_USERNAME,
   githubRepo: process.env.CIRCLE_PROJECT_REPONAME,
   githubSourceBranch: process.env.CIRCLE_BRANCH,
-  githubPullRequestId: (process.env.CI_PULL_REQUEST || '').split('/').slice(-1)[0]
+  githubPullRequestId: (process.env.CI_PULL_REQUEST || '').split('/').slice(-1)[0],
+  githubCommitId: process.env.CIRCLE_SHA1
 };
