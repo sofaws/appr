@@ -4,8 +4,9 @@
   "description": "Pull Request Review Apps for create-react-native-app / Expo",
   "main": "index.js",
   "scripts": {
-    "test": "eslint scripts/",
-    "build": "babel src --out-dir dist --extensions \".js\" --copy-files"
+    "test": "eslint src/",
+    "build": "babel src --out-dir dist --extensions \".js\" --copy-files",
+    "watch": "babel --watch src --out-dir dist --extensions \".js\" --copy-files"
   },
   "engines": {
     "node": ">= 6.4.0",

@@ -27,6 +27,7 @@ export default {
   // pull request number, e.g. 123
   githubPullRequestId: process.env.GITHUB_PR_NUMBER,
 
-  // if argument --commit-id is present then this value is  used for generating the exponent publish name
+  // if argument --commit-id is present
+    // then this value is  used for generating the exponent publish name
   githubCommitId: process.env.GITHUB_ID_COMMIT
 };
