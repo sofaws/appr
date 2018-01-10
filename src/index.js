@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
-import spawn from './scripts/spawn';
-import config from './scripts/config';
-import log from './scripts/utils/log.utils';
-import preDeploy from './scripts/pre-deploy';
-import postDeploy from './scripts/post-deploy';
+import spawn from './utils/spawn.utils';
+import config from './config';
+import log from './utils/log.utils';
+import preDeploy from './pre-deploy';
+import postDeploy from './post-deploy';
 const localExp = './node_modules/exp/bin/exp.js';
 
 log('Logging into Expo...');
 
 let suffix;
-process.argv.includes('--commit-id') ?
+config.useCommit ?
     suffix = config.githubCommitId :
     suffix = config.githubSourceBranch;
 

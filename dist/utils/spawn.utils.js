@@ -9,7 +9,7 @@ var _child_process = require('child_process');
 
 var _child_process2 = _interopRequireDefault(_child_process);
 
-var _log = require('./utils/log.utils');
+var _log = require('./log.utils');
 
 var _log2 = _interopRequireDefault(_log);
 

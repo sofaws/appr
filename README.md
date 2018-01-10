@@ -61,6 +61,17 @@ Add the `appr` task to the `scripts` section of your package.json:
   }
 ```
 
+By default, appr uses the pull request's branch name to create the Expo application ([Project-name] - [Branch-name]). You can use the commit id instead:
+
+```diff
+  scripts: {
++   "appr": "appr --commit",
+  }
+```
+
+This allows to have a QR Code that points to each commit of the pull request.
+
+
 Next, configure one of the currently supported CI environments:
 - [Configuring Travis](#configuring-travis)
 - [Configuring Circle CI](#configuring-circle-ci)
@@ -170,7 +181,7 @@ You should now be able to create a new branch, make changes, and open a pull req
 ## Configuring other CIs
 
 If your preferred CI is not explicitly supported by _appr_, but supports building GitHub pull requests,
-you can use it by [defining environment variables as shown in the default config file](scripts/config/default.js).
+you can use it by [defining environment variables as shown in the default config file](scripts/config/default.config.js).
 
 ## Contributing
 

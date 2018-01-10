@@ -3,7 +3,7 @@ import {
     writePackageJSON,
     readAppJSON,
     writeAppJSON
-} from './utils/json.utils';
+} from './utils/files.utils';
 import { getExpPublishName } from './utils/exp.utils';
 
 export default function preDeploy(suffix) {

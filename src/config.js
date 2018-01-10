@@ -1,6 +1,6 @@
-import configCircle from './config/circle';
-import configTravis from './config/travis';
-import configDefault from './config/default';
+import configCircle from './config/circle.config';
+import configTravis from './config/travis.config';
+import configDefault from './config/default.config';
 
 let config;
 if (process.env.TRAVIS === 'true') {
@@ -10,6 +10,8 @@ if (process.env.TRAVIS === 'true') {
 } else {
   config = configDefault;
 }
+
+const useCommit = process.argv.includes('--commit');
 
 for (const key in config) {
   const value = config[key];
@@ -25,4 +27,4 @@ for (const key in config) {
   }
 }
 
-export default { ...config };
+export default { ...config, useCommit };

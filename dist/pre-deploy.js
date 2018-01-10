@@ -8,21 +8,21 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 exports.default = preDeploy;
 
-var _json = require('./utils/json.utils');
+var _files = require('./utils/files.utils');
 
 var _exp = require('./utils/exp.utils');
 
 function preDeploy(suffix) {
-  var pkg = (0, _json.readPackageJSON)();
+  var pkg = (0, _files.readPackageJSON)();
   var name = (0, _exp.getExpPublishName)(pkg.name, suffix);
   var modified = _extends({}, pkg, {
     name: name,
     privacy: 'unlisted'
   });
 
-  (0, _json.writePackageJSON)(modified);
+  (0, _files.writePackageJSON)(modified);
 
-  var app = (0, _json.readAppJSON)();
+  var app = (0, _files.readAppJSON)();
   if (app.expo) {
     app.expo = _extends({}, app.expo, {
       name: name,
@@ -37,5 +37,5 @@ function preDeploy(suffix) {
     });
   }
 
-  (0, _json.writeAppJSON)(app);
+  (0, _files.writeAppJSON)(app);
 }

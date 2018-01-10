@@ -1,5 +1,5 @@
 import childProcess from 'child_process';
-import log from './utils/log.utils';
+import log from './log.utils';
 
 /*
  * Spawn a child process with a callback when the process exits

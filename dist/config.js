@@ -6,15 +6,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _circle = require('./config/circle');
+var _circle = require('./config/circle.config');
 
 var _circle2 = _interopRequireDefault(_circle);
 
-var _travis = require('./config/travis');
+var _travis = require('./config/travis.config');
 
 var _travis2 = _interopRequireDefault(_travis);
 
-var _default = require('./config/default');
+var _default = require('./config/default.config');
 
 var _default2 = _interopRequireDefault(_default);
 
@@ -29,6 +29,8 @@ if (process.env.TRAVIS === 'true') {
   config = _default2.default;
 }
 
+var useCommit = process.argv.includes('--commit');
+
 for (var key in config) {
   var value = config[key];
   // shell envs are weird
@@ -37,4 +39,4 @@ for (var key in config) {
   }
 }
 
-exports.default = _extends({}, config);
+exports.default = _extends({}, config, { useCommit: useCommit });
